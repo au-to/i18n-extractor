@@ -1,0 +1,10 @@
+{
+  "name": "i18n-extractor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.3.0",
+    "chalk": "^4.1.2",
+    "glob": "^8.1.0"
+  }
+}
