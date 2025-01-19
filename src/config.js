@@ -1,29 +1,30 @@
+// 导出配置对象
 module.exports = {
-  // 扫描目录
-  scanDirs: ['./src/views', './src/components'],
+  // 需要扫描的目录列表
+  scanDirs: ['./src/routes', './src/components'],
   
-  // i18n文件路径
+  // i18n 翻译文件的存储路径
   i18nPath: './src/i18n/zh-CN.json',
   
-  // 忽略的文件和目录
+  // 扫描时需要忽略的文件和目录
   ignore: ['node_modules', 'dist'],
   
-  // 是否备份原文件
+  // 是否在处理文件前进行备份
   backup: true,
   
-  // 是否生成日志
+  // 是否生成处理日志
   generateLog: true,
   
-  // 日志路径
+  // 日志文件路径
   logPath: './i18n-extract.log',
   
-  // 备份目录
+  // 文件备份存储目录
   backupDir: './i18n-backup',
   
-  // 中文正则
+  // 用于匹配中文文本的正则表达式
   chineseRegex: /[\u4e00-\u9fa5]+/g,
   
-  // 排除的内容模式
+  // 不需要翻译的内容模式
   excludePatterns: [
     /^\d+$/,  // 纯数字
     /^[a-zA-Z\s]+$/,  // 纯英文
