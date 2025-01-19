@@ -187,5 +187,4 @@ class I18nExtractor {
   }
 }
 
-// 导出 I18nExtractor 类
 module.exports = I18nExtractor

@@ -1,14 +1,13 @@
-// 导入所需的 Node.js 内置模块和第三方依赖
 const fs = require('fs').promises;  // 文件系统模块的 Promise 版本
 const path = require('path');       // 路径处理模块
 const chalk = require('chalk');     // 终端彩色输出模块
 
 // 日志工具对象，提供不同级别的彩色日志输出
 exports.logger = {
-  info: (msg) => console.log(chalk.blue(msg)),     // 信息级别，蓝色
-  success: (msg) => console.log(chalk.green(msg)), // 成功级别，绿色
-  error: (msg) => console.log(chalk.red(msg)),     // 错误级别，红色
-  warn: (msg) => console.log(chalk.yellow(msg))    // 警告级别，黄色
+  info: (msg) => console.log(chalk.blue(msg)),     // 信息级别
+  success: (msg) => console.log(chalk.green(msg)), // 成功级别
+  error: (msg) => console.log(chalk.red(msg)),     // 错误级别
+  warn: (msg) => console.log(chalk.yellow(msg))    // 警告级别
 };
 
 /**
