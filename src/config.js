@@ -1,5 +1,5 @@
 // 导出配置对象
-module.exports = {
+export default {
   // 需要扫描的目录列表
   scanDirs: ['./src/test'],
   

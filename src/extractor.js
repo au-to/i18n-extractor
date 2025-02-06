@@ -1,7 +1,7 @@
-const fs = require('fs').promises;
-const glob = require('glob');
-const parser = require('@vue/compiler-sfc');
-const { logger, backup, writeLog, shouldTranslate, generateKey } = require('./utils');
+import fs from 'fs/promises';
+import glob from 'glob';
+import parser from '@vue/compiler-sfc';
+import { logger, backup, writeLog, shouldTranslate, generateKey } from './utils.js';
 
 /**
  * i18n 提取器类
@@ -235,4 +235,4 @@ class I18nExtractor {
   }
 }
 
-module.exports = I18nExtractor
+export default I18nExtractor

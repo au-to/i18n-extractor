@@ -1,5 +1,5 @@
-const I18nExtractor = require('./src/extractor');
-const config = require('./src/config');
+import I18nExtractor from './src/extractor.js';
+import config from './src/config.js';
 
 /**
  * 主函数：初始化并运行提取器
@@ -14,4 +14,4 @@ async function main() {
   }
 }
 
-main()
+main();

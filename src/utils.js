@@ -1,9 +1,9 @@
-const fs = require('fs').promises;  // 文件系统模块的 Promise 版本
-const path = require('path');       // 路径处理模块
-const chalk = require('chalk');     // 终端彩色输出模块
+import fs from 'fs/promises';  // 文件系统模块的 Promise 版本
+import path from 'path';       // 路径处理模块
+import chalk from 'chalk';     // 终端彩色输出模块
 
 // 日志工具对象，提供不同级别的彩色日志输出
-exports.logger = {
+export const logger = {
   info: (msg) => console.log(chalk.blue(msg)),     // 信息级别
   success: (msg) => console.log(chalk.green(msg)), // 成功级别
   error: (msg) => console.log(chalk.red(msg)),     // 错误级别
@@ -16,7 +16,7 @@ exports.logger = {
  * @param {string} backupDir - 备份文件存储目录
  * @returns {Promise<string>} 返回备份文件的路径
  */
-exports.backup = async (filePath, backupDir) => {
+export const backup = async (filePath, backupDir) => {
   const fileName = path.basename(filePath);
   // 生成带时间戳的备份文件名
   const backupPath = path.join(backupDir, `${fileName}.${Date.now()}.bak`);
@@ -32,7 +32,7 @@ exports.backup = async (filePath, backupDir) => {
  * @param {string} logPath - 日志文件路径
  * @param {string} content - 日志内容
  */
-exports.writeLog = async (logPath, content) => {
+export const writeLog = async (logPath, content) => {
   const timestamp = new Date().toISOString();
   // 格式化日志内容，添加时间戳
   const logContent = `[${timestamp}] ${content}\n`;
@@ -46,7 +46,7 @@ exports.writeLog = async (logPath, content) => {
  * @param {RegExp[]} excludePatterns - 排除规则数组
  * @returns {boolean} 是否需要翻译
  */
-exports.shouldTranslate = (text, excludePatterns) => {
+export const shouldTranslate = (text, excludePatterns) => {
   return !excludePatterns.some(pattern => pattern.test(text));
 };
 
@@ -55,7 +55,7 @@ exports.shouldTranslate = (text, excludePatterns) => {
  * @param {string} text - 原文本
  * @returns {string} 生成的 key
  */
-exports.generateKey = (text) => {
+export const generateKey = (text) => {
   // 生成简单的 key：取前10个字符，替换空格和中文为下划线，转小写
   return `text_${text.slice(0, 10)
     .replace(/[\s\u4e00-\u9fa5]/g, '_')

@@ -5,6 +5,7 @@
   "scripts": {
     "extract": "node index.js"
   },
+  "type": "module",
   "dependencies": {
     "@vue/compiler-sfc": "^3.3.0",
     "chalk": "^4.1.2",
