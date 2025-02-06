@@ -1,13 +1,13 @@
-import fs from 'fs/promises';  // 文件系统模块的 Promise 版本
-import path from 'path';       // 路径处理模块
-import chalk from 'chalk';     // 终端彩色输出模块
+import fs from 'fs/promises';
+import path from 'path';
+import chalk from 'chalk';
 
 // 日志工具对象，提供不同级别的彩色日志输出
 export const logger = {
-  info: (msg) => console.log(chalk.blue(msg)),     // 信息级别
-  success: (msg) => console.log(chalk.green(msg)), // 成功级别
-  error: (msg) => console.log(chalk.red(msg)),     // 错误级别
-  warn: (msg) => console.log(chalk.yellow(msg))    // 警告级别
+  info: (msg) => console.log(chalk.blue(msg)),
+  success: (msg) => console.log(chalk.green(msg)),
+  error: (msg) => console.log(chalk.red(msg)),
+  warn: (msg) => console.log(chalk.yellow(msg))
 };
 
 /**
